@@ -1,14 +1,23 @@
 package com.mastertech.glaucia;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 public class LeitorConsole {
-    public Scanner scanner;
-
+    double valor;
+    int meses;
     public LeitorConsole(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Digite o valor: "+sc.next());
-        sc.close();
+        System.out.print("Digite o capital a ser investido R$: ");
+          valor = sc.nextDouble();
+        System.out.print("Digite o prazo: ");
+           meses = sc.nextInt();
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public int getMeses() {
+        return meses;
     }
 }

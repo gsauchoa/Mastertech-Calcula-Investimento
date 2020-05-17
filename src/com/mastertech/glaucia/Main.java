@@ -7,23 +7,16 @@ public class Main {
     private static DecimalFormat df2 = new DecimalFormat("#.##");
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Digite o capital a ser investido R$: ");
 
-        double valor = sc.nextDouble();
+       LeitorConsole Leitor = new LeitorConsole();
 
-        System.out.print("Digite o prazo: ");
+       double valor= Leitor.valor;
 
-        int  meses = sc.nextInt();
+       int meses=Leitor.meses;
 
-        //double resul = meses*(valor*1.007);
+        CalculaInvestimento calcular = new CalculaInvestimento();
 
-
-        double resul=valor;
-
-        for (int tempo=1; tempo<=meses; ++tempo){
-            resul +=(0.007*resul);
-        }
+        double resul=calcular.CalculaInvestimento(valor, meses);
 
         System.out.printf("\n========================================\n");
 
